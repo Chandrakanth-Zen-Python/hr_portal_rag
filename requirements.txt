@@ -1,0 +1,9 @@
+boto3
+psycopg2-binary
+pgvector
+streamlit
+langchain
+langchain-text-splitters
+pypdf2
+python-dotenv
+python-docx
