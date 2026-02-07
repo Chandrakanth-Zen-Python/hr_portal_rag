@@ -16,10 +16,11 @@ A local Retrieval-Augmented Generation (RAG) application for internal knowledge 
   - Embeddings model (default: Titan)
   - LLM model (default: Mistral 7B instruct)
 
-## Quick Start
+## Quick Start (Clone + Run)
 
 ```bash
-cd /home/chandrakanth/Projects/hr_portal_rag
+git clone <your-repo-url>
+cd hr_portal_rag
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
