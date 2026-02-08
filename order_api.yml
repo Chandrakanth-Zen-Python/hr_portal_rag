@@ -1,0 +1,30 @@
+openapi: 3.0.1
+info:
+  title: Order Status API
+  version: 1.0.0
+
+paths:
+  /order-status:
+    get:
+      operationId: getOrderStatus
+      description: Get the status of a customer order
+      parameters:
+        - name: order_id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Order status response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  order_id:
+                    type: string
+                  status:
+                    type: string
+                  expected_delivery:
+                    type: string

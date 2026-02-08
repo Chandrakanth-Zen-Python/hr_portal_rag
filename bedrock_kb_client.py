@@ -161,17 +161,17 @@ def main():
         region_name=REGION
     )
     
-    # Example 1: Simple retrieval
-    print("=== Example 1: Retrieve documents ===")
-    query = "What types of leave are available to employees?"
-    results = client.query(query, max_results=3)
+    # # Example 1: Simple retrieval
+    # print("=== Example 1: Retrieve documents ===")
+    # query = "What types of leave are available to employees?"
+    # results = client.query(query, max_results=3)
     
-    for i, result in enumerate(results, 1):
-        print(f"\nResult {i}:")
-        print(f"Score: {result.score:.4f}")
-        print(f"Source: {result.source}")
-        print(f"Content: {result.content[:200]}...")
-        print(f"Metadata: {result.metadata}")
+    # for i, result in enumerate(results, 1):
+    #     print(f"\nResult {i}:")
+    #     print(f"Score: {result.score:.4f}")
+    #     print(f"Source: {result.source}")
+    #     print(f"Content: {result.content[:200]}...")
+    #     print(f"Metadata: {result.metadata}")
     
     # Example 2: Retrieve and generate with Nova Pro (most capable)
     print("\n\n=== Example 2: Retrieve and Generate with Nova Pro ===")
@@ -184,15 +184,15 @@ def main():
     print(f"\nGenerated Response:")
     print(response["generated_text"])
     
-    print(f"\n\nCitations ({len(response['citations'])}):")
-    for i, citation in enumerate(response["citations"], 1):
-        print(f"\nCitation {i}:")
-        references = citation.get("retrievedReferences", [])
-        for ref in references:
-            location = ref.get("location", {}).get("s3Location", {}).get("uri", "Unknown")
-            content = ref.get("content", {}).get("text", "")
-            print(f"  Source: {location}")
-            print(f"  Content: {content[:150]}...")
+    # print(f"\n\nCitations ({len(response['citations'])}):")
+    # for i, citation in enumerate(response["citations"], 1):
+    #     # print(f"\nCitation {i}:")
+    #     references = citation.get("retrievedReferences", [])
+    #     for ref in references:
+    #         # location = ref.get("location", {}).get("s3Location", {}).get("uri", "Unknown")
+    #         content = ref.get("content", {}).get("text", "")
+    #         # print(f"  Source: {location}")
+    #         print(f"  Content: {content[:150]}...")
     
     # # Example 3: Using Nova Lite for faster, cost-effective responses
     # print("\n\n=== Example 3: Using Nova Lite ===")
